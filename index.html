@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Task 1</title>
+        <!--Tailwind CSS CDN Link-->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    " rel="stylesheet">
+</head>
+
+<body class="bg-pink-300 text-center mt-20">
+    <section>
+        <h1 class="my-2 text-center text-3xl font-bold mt-30 ml-40 pt-10 ">Students Registration Form</h1>
+        <form>
+            <table>
+                <td>
+                    <tr class="text-center">Name: </tr>
+                    <tr><input type="text" placeholder="Name" id="name"
+                            class="my-2 py-1 px-6 ml-4 w-50 rounded-md border border-white  bg-gray-900 text-gray-300">
+                    </tr>
+                </td>
+                <span class="nameerror">Name Contains Only Letter</span>
+                <br>
+                <td>
+                    <tr>Email:</tr>
+                    <tr><input type="text" placeholder="email" id="email"
+                            class="my-2 py-1 px-6 ml-4 w-50 rounded-md border border-white  bg-gray-900 text-gray-300">
+                    </tr>
+                </td>
+                <span class="emailerror">Please Enter Valid Email ID</span>
+                <br>
+                <td>
+                    <tr>Password:</tr>
+                    <tr><input type="text" placeholder="Password" id="password"
+                            class="my-2 py-1 px-6 ml-4  rounded-md border border-white  bg-gray-900 text-gray-300"></tr>
+                </td>
+                <span Class="passworderror">The Password must contains only Six Character</span>
+                <br>
+            </table>
+            <input type="submit" id="submit" class="my-2 py-1 px-6 rounded-md border hover:bg-green-800 border-white cursor-pointer  text-gray-300">
+        </form>
+
+    </section>
+</body>
+<style>
+    .nameerror,
+    .emailerror,
+    .passworderror {
+        color: red;
+        display: none;
+    }
+</style>
+
+<script>
+    var submit = document.getElementById("submit")
+    submit.addEventListener("click", function () {
+        event.preventDefault()
+        var nameRegex = /^[a-z A-Z]+$/
+        var emailRegex = /^[a-z A-Z 0-9]+@gmail.com/
+        var passwordRegex = /^\d{6}$/
+
+
+
+        var name = document.getElementById("name")
+        var Email = document.getElementById("email")
+        var Password = document.getElementById("password")
+
+        var validate = true
+        {
+            if (nameRegex.test(name.value) == false) {
+                document.querySelector(".nameerror").style.display = "inline"
+                validate = false
+            }
+            else {
+                document.querySelector(".nameerror").style.display = "none"
+            }
+            if (emailRegex.test(email.value) == false) {
+                document.querySelector(".emailerror").style.display = "inline"
+                validate = false
+            }
+            else {
+                document.querySelector(".emailerror").style.display = "none"
+            }
+            if (passwordRegex.test(password.value) == false) {
+                document.querySelector(".passworderror").style.display = "inline"
+                validate = false
+            }
+            else {
+                document.querySelector(".passworderror").style.display = "none"
+            }
+        }
+        if (validate == true) {
+            alert("Form Submitted Succesfully")
+        }
+
+    })
+</script>
+
+</html>
