@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation Task 1</title>
-        <!--Tailwind CSS CDN Link-->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    <!--Tailwind CSS CDN Link-->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
     " rel="stylesheet">
 </head>
 
 <body class="bg-pink-300 text-center mt-20">
     <section>
-        <h1 class="my-2 text-center text-3xl font-bold mt-30 ml-40 pt-10 ">Students Registration Form</h1>
+        <h1 class="my-2 text-center text-2xl font-bold mt-30 ml-40 pt-10 md:text-5xl">Students Registration Form</h1>
         <form>
             <table>
                 <td>
                     <tr class="text-center">Name: </tr>
                     <tr><input type="text" placeholder="Name" id="name"
-                            class="my-2 py-1 px-6 ml-4 w-50 rounded-md border border-white  bg-gray-900 text-gray-300">
+                            class="my-2 py-1 px-6 ml-4 w-60 rounded-md border border-white  bg-gray-900 text-gray-300">
                     </tr>
                 </td>
                 <span class="nameerror">Name Contains Only Letter</span>
@@ -26,7 +26,7 @@
                 <td>
                     <tr>Email:</tr>
                     <tr><input type="text" placeholder="email" id="email"
-                            class="my-2 py-1 px-6 ml-4 w-50 rounded-md border border-white  bg-gray-900 text-gray-300">
+                            class="my-2 py-1 px-6 ml-4 w-60 rounded-md border border-white  bg-gray-900 text-gray-300">
                     </tr>
                 </td>
                 <span class="emailerror">Please Enter Valid Email ID</span>
@@ -34,12 +34,13 @@
                 <td>
                     <tr>Password:</tr>
                     <tr><input type="text" placeholder="Password" id="password"
-                            class="my-2 py-1 px-6 ml-4  rounded-md border border-white  bg-gray-900 text-gray-300"></tr>
+                            class="my-2 py-1 px-6 ml-4 w-60   rounded-md border border-white  bg-gray-900 text-gray-300"></tr>
                 </td>
                 <span Class="passworderror">The Password must contains only Six Character</span>
                 <br>
             </table>
-            <input type="submit" id="submit" class="my-2 py-1 px-6 rounded-md border hover:bg-green-800 border-white cursor-pointer  text-gray-300">
+            <input type="submit" id="submit"
+                class="my-2 py-1 px-6 ml-4 rounded-md border text-black hover:bg-green-800 border-white cursor-pointer  text-black-300">
         </form>
 
     </section>
